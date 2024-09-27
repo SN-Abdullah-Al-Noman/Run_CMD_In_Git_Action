@@ -43,7 +43,6 @@ jobs:
         run: |
           :
           ${{ github.event.inputs.cmd }}
-          echo "💥💥 Bot started"
 
       - name: Keep the workflow alive for 30 minutes.
         run: |
