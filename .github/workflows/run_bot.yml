@@ -18,9 +18,9 @@ jobs:
 
       - name: Installing packages.
         run: |
-          sudo apt-get update
+          sudo apt-get install docker.io
           
-      - name: Cloning repo.
+      - name: Running command.
         run: |
           :
           ${{ github.event.inputs.cmd }}
