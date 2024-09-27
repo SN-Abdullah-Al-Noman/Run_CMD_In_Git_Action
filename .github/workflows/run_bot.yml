@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository.
         uses: actions/checkout@v2
 
-      - name: Cleanup
+      - name: Cleaning unnecessary packages.
         uses: rokibhasansagar/slimhub_actions@main
         
       - name: Installing packages.
@@ -45,7 +45,7 @@ jobs:
           ${{ github.event.inputs.cmd }}
           echo "💥💥 Bot started"
 
-      - name: Keep the workflow alive for 30 minutes
+      - name: Keep the workflow alive for 30 minutes.
         run: |
           echo "Sleeping for 30 minutes..."
           sleep 1800
