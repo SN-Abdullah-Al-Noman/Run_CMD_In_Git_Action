@@ -18,7 +18,8 @@ jobs:
 
       - name: Installing packages.
         run: |
-          sudo apt uninstall docker.io docker-compose docker-compose-v2 docker-doc podman-docker -y
+          sudo apt-get remove --purge docker\.io docker-compose docker-compose-v2 docker-doc podman-docker -y
+          for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
           
       - name: Running command.
         run: |
