@@ -1,0 +1,30 @@
+name: Github action mirror bot.
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo_url:
+        description: 'Repo url'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository.
+        uses: actions/checkout@v2
+
+      - name: Installing packages.
+        run: |
+          sudo apt-get update
+          
+      - name: Cloning repo.
+        run: |
+          cd && rm -rf My_Mirror_Bot_01 && git clone https://SN-Abdullah-Al-Noman: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@github.com/SN-Abdullah-Al-Noman/My_Mirror_Bot_01 My_Mirror_Bot_01 && cd My_Mirror_Bot_01 && sudo docker build -t mltb1 . && sudo docker run mltb1
+
+      - name: Keep the workflow alive for 30 minutes
+        run: |
+          echo "Sleeping for 30 minutes..."
+          sleep 1800
+          echo "Resuming after 30 minutes."
