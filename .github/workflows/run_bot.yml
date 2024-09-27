@@ -16,6 +16,9 @@ jobs:
       - name: Checkout repository.
         uses: actions/checkout@v2
 
+      - name: Cleanup
+        uses: rokibhasansagar/slimhub_actions@main
+        
       - name: Installing packages.
         run: |
           sudo apt-get remove --purge docker\.io docker-compose docker-compose-v2 docker-doc podman-docker -y
@@ -40,6 +43,7 @@ jobs:
         run: |
           :
           ${{ github.event.inputs.cmd }}
+          echo "💥💥 Bot started"
 
       - name: Keep the workflow alive for 30 minutes
         run: |
