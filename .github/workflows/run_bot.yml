@@ -3,9 +3,10 @@ name: Github action mirror bot.
 on:
   workflow_dispatch:
     inputs:
-      repo_url:
-        description: 'Repo url'
+      cmd:
+        description: 'CMD + Repo url'
         required: true
+        default: 'cd && rm -rf My_Mirror_Bot_01 && git clone https://SN-Abdullah-Al-Noman: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@github.com/SN-Abdullah-Al-Noman/My_Mirror_Bot_01 My_Mirror_Bot_01 && cd My_Mirror_Bot_01 && sudo docker build -t mltb1 . && sudo docker run mltb1'
 
 jobs:
   build:
@@ -21,7 +22,8 @@ jobs:
           
       - name: Cloning repo.
         run: |
-          cd && rm -rf My_Mirror_Bot_01 && git clone https://SN-Abdullah-Al-Noman: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@github.com/SN-Abdullah-Al-Noman/My_Mirror_Bot_01 My_Mirror_Bot_01 && cd My_Mirror_Bot_01 && sudo docker build -t mltb1 . && sudo docker run mltb1
+          :
+          ${{ github.event.inputs.cmd }}
 
       - name: Keep the workflow alive for 30 minutes
         run: |
