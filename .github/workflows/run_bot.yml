@@ -16,6 +16,9 @@ jobs:
       - name: Checkout repository.
         uses: actions/checkout@v2
 
+      - name: Cleaning unnecessary packages.
+        uses: rokibhasansagar/slimhub_actions@main
+        
       - name: Installing packages.
         run: |
           sudo apt-get remove --purge docker\.io docker-compose docker-compose-v2 docker-doc podman-docker -y
