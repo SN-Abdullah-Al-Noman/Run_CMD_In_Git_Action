@@ -1,4 +1,4 @@
-name: Github action mirror bot.
+name: Run command.
 
 on:
   workflow_dispatch:
@@ -15,9 +15,6 @@ jobs:
     steps:
       - name: Checkout repository.
         uses: actions/checkout@v2
-
-      - name: Cleaning unnecessary packages.
-        uses: rokibhasansagar/slimhub_actions@main
         
       - name: Installing packages.
         run: |
