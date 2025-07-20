@@ -3,7 +3,7 @@ name: Run on Any Touch
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - '**'  # This matches changes to any file or folder
 
