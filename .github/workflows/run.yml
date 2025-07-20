@@ -1,0 +1,18 @@
+name: Run on Any Touch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**'  # This matches changes to any file or folder
+
+jobs:
+  run-on-change:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Detect Change
+        run: echo "Something was touched. Running workflow on Ubuntu 18.04..."
