@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - '**'  # This matches changes to any file or folder
+      - '**'
 
 jobs:
   run-on-change:
@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Detect Change
-        run: echo "Something was touched. Running workflow on Ubuntu 18.04..."
+        run: sudo apt update
